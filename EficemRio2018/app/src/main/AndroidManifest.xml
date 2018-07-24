@@ -32,7 +32,7 @@
         </activity>
 
         <activity
-            android:name=".VelocityCatcher"
+            android:name=".GetSpeed"
             android:label="Eficem Rio 2018">
         </activity>
     </application>

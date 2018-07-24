@@ -31,19 +31,13 @@ public class RunningActivity extends AppCompatActivity {
             testeNumero= (int) savedInstanceState.getSerializable("testeNumero");
             categoria= (String) savedInstanceState.getSerializable("categoria");
         }
-        //Mostra Velocidade
 
-
-        rola();
+        showSpeed();
 
     }
-    public TextView rola2 (){
-        TextView velocityTextView = (TextView) findViewById(R.id.velocityTextView);
-        return velocityTextView;
-    }
-    public void rola (){
-
-        VelocityCatcher velocityCatcher = new VelocityCatcher();
-        velocityCatcher.pedirPermissoes(this,rola2());
+    public void showSpeed (){
+        TextView speedTextView = (TextView) findViewById(R.id.speedTextView);
+        GetSpeed getSpeed = new GetSpeed();
+        getSpeed.pedirPermissoes(this,speedTextView);
     }
 }
