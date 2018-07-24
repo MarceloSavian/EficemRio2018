@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="br.ufsc.eficem.eficem.MainActivity">
+
+    <Button
+        android:id="@+id/btnVoltas"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Volta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lblVelocidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Velocidade"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/btnVoltas" />
+
+    <TextView
+        android:id="@+id/txtVelocidade"
+        android:maxLength="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/lblVelocidade" />
+
+    <TextView
+        android:id="@+id/lblVolta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Volta"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/txtVelocidade" />
+
+    <TextView
+        android:id="@+id/txtVolta"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/lblVolta" />
+
+    <TextView
+        android:id="@+id/lblTempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Tempo de Prova"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/txtVolta" />
+
+    <TextView
+        android:id="@+id/txtTempo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/lblTempo" />
+
+    <TextView
+        android:id="@+id/lblEficiencia"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Eficiência"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/txtTempo" />
+
+    <TextView
+        android:id="@+id/txtEficiencia"
+        android:maxLength="4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/lblEficiencia" />
+
+    <TextView
+        android:id="@+id/lblVelocidadeIdeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Velocidade Ideal"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/txtEficiencia" />
+
+    <TextView
+        android:id="@+id/txtVelocidadeIdeal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:maxLength="4"
+        android:textAppearance="@android:style/TextAppearance.DeviceDefault.Large"
+        android:textSize="36sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnVoltas"
+        app:layout_constraintStart_toStartOf="@+id/btnVoltas"
+        app:layout_constraintTop_toBottomOf="@+id/lblVelocidadeIdeal" />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="223dp" />
+
+</android.support.constraint.ConstraintLayout>
