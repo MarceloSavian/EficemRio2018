@@ -10,63 +10,72 @@ import android.widget.Toast;
 
 public class GetLaps {
 
-    boolean isFirstLocationFinded;
+    boolean isFirstLocationFinded = false;
     private double totalDistance = 0;
-    private double[] latlon,latlonNew;
+    private double latitude1;
+    private double latitude2;
+    private double longitude1;
+    private double longitude2;
     private float[] distance = new float[1];
 
-    public void getDistance(final Context context, final TextView LapTextView, final int TotalLaps, final int TotalDistance){
-        try {
-            LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
 
-            LocationListener locationListener = new LocationListener() {
-                public void onLocationChanged(Location location) {
-                    if (!isFirstLocationFinded){
-                        if (totalDistance == 0){
-                            latlon = new double[]{location.getLatitude(), location.getLongitude()};
-                            isFirstLocationFinded = true;
-                        }else {
-                            latlon = new double []{location.getLatitude(), location.getLongitude()};
-                            Location.distanceBetween(latlonNew[0],latlonNew[1],latlon[0],latlon[1],distance);
-                            totalDistance = distance[0] + totalDistance;
-                            isFirstLocationFinded = true;
-                        }
-                    }else {
-                        latlonNew = new double[]{location.getLatitude(), location.getLongitude()};
-                        Location.distanceBetween(latlon[0],latlon[1],latlonNew[0],latlonNew[1],distance);
+    public void setLatitude1(double latitude1) {
+        this.latitude1 = latitude1;
+    }
 
-                        totalDistance = distance[0] + totalDistance;
-                        isFirstLocationFinded = false;
-                    }
-                    ShowLaps(totalDistance,LapTextView,TotalLaps, TotalDistance);
-                }
+    public void setLatitude2(double latitude2) {
+        this.latitude2 = latitude2;
+    }
 
-                public void onStatusChanged(String provider, int status, Bundle extras) { }
+    public void setLongitude1(double longitude1) {
+        this.longitude1 = longitude1;
+    }
 
-                public void onProviderEnabled(String provider) { }
+    public void setLongitude2(double longitude2) {
+        this.longitude2 = longitude2;
+    }
 
-                public void onProviderDisabled(String provider) { }
-            };
-            locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
-        }catch(SecurityException ex){
-            Toast.makeText(context, ex.getMessage(), Toast.LENGTH_LONG).show();
+
+    public Double getDistance(){
+
+        if (!isFirstLocationFinded){
+            if (totalDistance == 0){
+                isFirstLocationFinded = true;
+                return totalDistance;
+            }
+            else {
+                Location.distanceBetween(latitude2,longitude2,latitude1,longitude1,distance);
+                totalDistance = distance[0] + totalDistance;
+                isFirstLocationFinded = true;
+                return totalDistance;
+            }
+        }
+        else {
+            Location.distanceBetween(latitude1,longitude1,latitude2,longitude2,distance);
+            totalDistance = distance[0] + totalDistance;
+            isFirstLocationFinded = false;
+            return totalDistance;
         }
     }
 
-    private void ShowLaps(double Distance, TextView LapTextView, int TotalLaps, int TotalDistance) {
+    public int getLaps(double Distance,Competicao competicao) {
 
         int i;
+        int TotalLaps = Integer.valueOf(competicao.getNumeroDeVoltas());
+        int TotalDistance = Integer.valueOf(competicao.getTamanhoDaPista());
+
 
         if (Distance < TotalDistance) {
-            LapTextView.setText("0");
+            i = 0;
+            return i;
         } else{
             for (i = 2; i < TotalLaps; i++) {
                 if (Distance < (TotalDistance * i)) {
-                    LapTextView.setText(String.valueOf((i-1)));
+                    i = i-1;
                     break;
                 }
             }
-
+            return i;
         }
     }
 

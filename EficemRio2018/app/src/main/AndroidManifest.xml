@@ -32,7 +32,7 @@
         </activity>
 
         <activity
-            android:name=".GetSpeed"
+            android:name=".Permission"
             android:label="Eficem Rio 2018">
         </activity>
     </application>

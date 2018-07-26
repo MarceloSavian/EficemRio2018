@@ -10,6 +10,10 @@ public class SplashScreenActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.splash_screen_activity);
+
+        Permission permission = new Permission();
+        permission.pedirPermissoes(this);
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
