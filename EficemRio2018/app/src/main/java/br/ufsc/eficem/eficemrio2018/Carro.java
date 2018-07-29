@@ -7,7 +7,7 @@ public class Carro {
     private Double latitude;
     private Double longitude;
     private Double altitude;
-    private int time;
+    private CharSequence time;
     private Double distance;
     private int lap;
     private Float speed;
@@ -36,11 +36,11 @@ public class Carro {
         this.altitude = altitude;
     }
 
-    public int getTime() {
+    public CharSequence getTime() {
         return time;
     }
 
-    public void setTime(int time) {
+    public void setTime(CharSequence time) {
         this.time = time;
     }
 
@@ -73,7 +73,7 @@ public class Carro {
         TextView speedTextView = runningActivity.getSpeedTextView();
         TextView lapTextView = runningActivity.getLapsTextView();
 
-        speedTextView.setText(String.valueOf(speed));
+        speedTextView.setText(String.valueOf(distance));
         lapTextView.setText(String.valueOf(lap));
 
     }

@@ -5,13 +5,14 @@ import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.widget.Chronometer;
 import android.widget.Toast;
 
 public class SetLocation {
 
     Boolean isFirstLocationFinded = true;
 
-    public void setLocation(final Context context, final RunningActivity runningActivity, final Competicao competicao){
+    public void setLocation(final Context context, final RunningActivity runningActivity, final Competicao competicao, final Chronometer1 chronometer){
 
         final Carro carro = new Carro();
         final GetLaps getLaps = new GetLaps();
@@ -41,7 +42,7 @@ public class SetLocation {
                         carro.setDistance(getLaps.getDistance());
                         isFirstLocationFinded = true;
                     }
-                    carro.setLap(getLaps.getLaps(carro.getDistance(), competicao));
+                    carro.setLap(getLaps.getLaps(carro.getDistance(), competicao,chronometer));
                     carro.showInformation(runningActivity);
 
                 }
