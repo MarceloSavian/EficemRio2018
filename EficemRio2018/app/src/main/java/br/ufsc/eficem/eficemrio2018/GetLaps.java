@@ -1,15 +1,10 @@
 package br.ufsc.eficem.eficemrio2018;
 
-import android.content.Context;
 import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Bundle;
-import android.widget.TextView;
-import android.widget.Toast;
 
 public class GetLaps {
 
+    int hue= 0;
     boolean isFirstLocationFinded = false;
     private double totalDistance = 0;
     private double latitude1;
@@ -17,6 +12,7 @@ public class GetLaps {
     private double longitude1;
     private double longitude2;
     private float[] distance = new float[1];
+    boolean[] setLapTime = new boolean[100];;
 
 
     public void setLatitude1(double latitude1) {
@@ -34,7 +30,6 @@ public class GetLaps {
     public void setLongitude2(double longitude2) {
         this.longitude2 = longitude2;
     }
-
 
     public Double getDistance(){
 
@@ -58,25 +53,30 @@ public class GetLaps {
         }
     }
 
-    public int getLaps(double Distance,Competicao competicao) {
+    public int getLaps(double Distance, Competicao competicao, Chronometer1 chronometer1) {
 
         int i;
         int TotalLaps = Integer.valueOf(competicao.getNumeroDeVoltas());
         int TotalDistance = Integer.valueOf(competicao.getTamanhoDaPista());
 
-
         if (Distance < TotalDistance) {
+            for (i=0;i<TotalLaps;i++){
+                setLapTime[i] = true;
+            }
             i = 0;
             return i;
         } else{
             for (i = 2; i < TotalLaps; i++) {
                 if (Distance < (TotalDistance * i)) {
                     i = i-1;
+                    if(setLapTime[i]){
+                        chronometer1.setSomaTempo(chronometer1.getTempoBanco());
+                        setLapTime[i] = false;
+                    }
                     break;
                 }
             }
             return i;
         }
     }
-
 }

@@ -5,10 +5,14 @@ import android.widget.TextView;
 
 public class Competicao {
 
+
     String competicao,categoria, tamanhoDaPista, numeroDeVoltas,testeNumero,tempoDeProva;
 
 
     ApiConnect cdb = new ApiConnect();
+
+    String tempoDeProva,testeNumero,competicao,categoria, tamanhoDaPista, numeroDeVoltas;
+
 
     public String getCompeticao() {
         return competicao;
