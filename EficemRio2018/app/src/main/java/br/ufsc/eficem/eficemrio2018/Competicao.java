@@ -5,8 +5,10 @@ import android.widget.TextView;
 
 public class Competicao {
 
-    String competicao,categoria, tamanhoDaPista, numeroDeVoltas;
-    int tempoDeProva,testeNumero;
+    String competicao,categoria, tamanhoDaPista, numeroDeVoltas,testeNumero,tempoDeProva;
+
+
+    ApiConnect cdb = new ApiConnect();
 
     public String getCompeticao() {
         return competicao;
@@ -24,11 +26,11 @@ public class Competicao {
         return numeroDeVoltas;
     }
 
-    public int getTempoDeProva() {
+    public String getTempoDeProva() {
         return tempoDeProva;
     }
 
-    public int getTesteNumero() {
+    public String getTesteNumero() {
         return testeNumero;
     }
 
@@ -38,18 +40,18 @@ public class Competicao {
             competicao= extras.getString("competicao");
             numeroDeVoltas= extras.getString("numeroDeVoltas");
             tamanhoDaPista = extras.getString("tamanhoDaPista");
-            tempoDeProva= extras.getInt("tempoDeProva");
-            testeNumero= extras.getInt("testeNumero");
+            tempoDeProva= extras.getString("tempoDeProva");
+            testeNumero= extras.getString("testeNumero");
             categoria= extras.getString("categoria");
 
         } else {
             competicao= (String) savedInstanceState.getSerializable("competicao");
             numeroDeVoltas= (String) savedInstanceState.getSerializable("numeroDeVoltas");
             tamanhoDaPista= (String) savedInstanceState.getSerializable("tamanhoDaPista");
-            tempoDeProva= (int) savedInstanceState.getSerializable("tempoDeProva");
-            testeNumero= (int) savedInstanceState.getSerializable("testeNumero");
+            tempoDeProva= (String) savedInstanceState.getSerializable("tempoDeProva");
+            testeNumero= (String) savedInstanceState.getSerializable("testeNumero");
             categoria= (String) savedInstanceState.getSerializable("categoria");
         }
+        cdb.setCompeticao();
     }
-
 }
