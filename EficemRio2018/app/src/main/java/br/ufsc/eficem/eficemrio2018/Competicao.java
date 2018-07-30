@@ -11,9 +11,6 @@ public class Competicao {
 
     ApiConnect cdb = new ApiConnect();
 
-    String tempoDeProva,testeNumero,competicao,categoria, tamanhoDaPista, numeroDeVoltas;
-
-
     public String getCompeticao() {
         return competicao;
     }
@@ -56,6 +53,6 @@ public class Competicao {
             testeNumero= (String) savedInstanceState.getSerializable("testeNumero");
             categoria= (String) savedInstanceState.getSerializable("categoria");
         }
-        cdb.setCompeticao();
+        cdb.setCompeticao() ;
     }
 }

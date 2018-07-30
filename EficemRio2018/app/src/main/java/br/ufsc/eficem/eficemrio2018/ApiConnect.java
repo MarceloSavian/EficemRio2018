@@ -1,18 +1,24 @@
 package br.ufsc.eficem.eficemrio2018;
 
-import java.io.IOException;
+
+import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.net.URLConnection;
 
 public class ApiConnect {
-    public void setCompeticao(){
+    public void setCompeticao() {
+        URL myURL = null;
         try {
-            URL myURL = new URL("http://dobkovski.com:8080/api/insert.php?nomcomp=rio&catcom=eletrico&numvol=1&tampis=150&tempro=200&numtes=2");
-            URLConnection myURLConnection = myURL.openConnection();
-            myURLConnection.connect();
+            myURL = new URL("http://dobkovski.com:8080/api/insert.php?nomcomp=rio&catcom=eletrico&numvol=1&tampis=150&tempro=200&numtes=2");
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
         }
-        catch (IOException e) {
+        try{
+            HttpURLConnection myConn = (HttpURLConnection) myURL.openConnection();
+            myConn.setRequestMethod("POST");
+        }catch (Exception e){
+            System.out.println(e);
         }
+
     }
 }
