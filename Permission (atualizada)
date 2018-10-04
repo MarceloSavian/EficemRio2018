@@ -10,15 +10,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class Permission {
-    /*
-    * Adicionar permissão  para guardar arquivo
-    *
-    */
-
-            /*
-    *
-    *
-    * */
 
     public void pedirPermissoes(Context context) {
         String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.READ_EXTERNAL_STORAGE, Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
