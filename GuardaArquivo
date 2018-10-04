@@ -1,0 +1,56 @@
+package br.ufsc.eficem.eficemrio2018;
+
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.os.Environment;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+
+public class GuardaArquivo {
+    public void salvaArquivo (Carro carro) throws IOException {
+        String diretorioApp = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DCIM) + "/" + "arquivo" + "/";
+        File diretorio = new File(diretorioApp);
+        File FileApp = new File(diretorioApp,"arquivo.txt");
+        diretorio.mkdirs();
+
+        //Cria o arquivo
+        FileApp.getParentFile().mkdirs();
+
+        //Abre o arquivo
+        FileOutputStream fosExt = null;
+        fosExt = new FileOutputStream(FileApp);
+
+        //Escreve no arquivo
+        String data = carro.getTime().toString();
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        data = String.valueOf(carro.getLap());
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        data = carro.getSpeed().toString();
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        data = carro.getDistance().toString();
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        data = carro.getLatitude().toString();
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        data = carro.getLongitude().toString();
+        fosExt.write(data.getBytes());
+        data = "\n";
+        fosExt.write(data.getBytes());
+        ProgressDialog dialog = null;
+
+
+        //Fechamento do arquivo
+        fosExt.close();
+    }
+}
