@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/competicaoTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        android:text="Competição:"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/competicaoEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Nome da Competição"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/competicaoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/competicaoTextView" />
+
+    <TextView
+        android:id="@+id/numeroDeVoltasTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Numero de Voltas:"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/competicaoTextView"
+        app:layout_constraintTop_toBottomOf="@+id/competicaoEditText" />
+
+    <EditText
+        android:id="@+id/numeroDeVoltasEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Numero de Voltas"
+        android:inputType="number"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/numeroDeVoltasTextView"
+        app:layout_constraintTop_toBottomOf="@+id/numeroDeVoltasTextView" />
+
+    <TextView
+        android:id="@+id/tamanhoDaPistaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tamanho da Pista(m):"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/numeroDeVoltasEditText"
+        app:layout_constraintTop_toBottomOf="@+id/numeroDeVoltasEditText" />
+
+    <EditText
+        android:id="@+id/tamanhoDaPistaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Tamanho da Pista"
+        android:inputType="number"
+        android:singleLine="false"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tamanhoDaPistaTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tamanhoDaPistaTextView" />
+
+    <TextView
+        android:id="@+id/tempoDeProvaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Tempo de Prova(s):"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tamanhoDaPistaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/tamanhoDaPistaEditText" />
+
+    <EditText
+        android:id="@+id/tempoDeProvaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Tempo Total da Prova"
+        android:inputType="number"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/tempoDeProvaTextView"
+        app:layout_constraintTop_toBottomOf="@+id/tempoDeProvaTextView" />
+
+    <TextView
+        android:id="@+id/testeNumeroTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Teste Numero:"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/tempoDeProvaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/tempoDeProvaEditText" />
+
+    <EditText
+        android:id="@+id/testeNumeroEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Numero de Testes Feitos"
+        android:inputType="number"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/testeNumeroTextView"
+        app:layout_constraintTop_toBottomOf="@+id/testeNumeroTextView" />
+
+    <TextView
+        android:id="@+id/categoriaTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Categoria:"
+        android:textColor="#000"
+        android:textSize="13sp"
+        app:layout_constraintStart_toStartOf="@+id/testeNumeroEditText"
+        app:layout_constraintTop_toBottomOf="@+id/testeNumeroEditText" />
+
+    <EditText
+        android:id="@+id/categoriaEditText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:hint="Categoria"
+        android:inputType="textPersonName"
+        android:singleLine="false"
+        android:textSize="13sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/categoriaTextView"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaTextView" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:text="Iniciar Teste"
+        android:textColor="@android:color/background_light"
+        app:layout_constraintEnd_toEndOf="@+id/categoriaEditText"
+        app:layout_constraintStart_toStartOf="@+id/categoriaEditText"
+        app:layout_constraintTop_toBottomOf="@+id/categoriaEditText" />
+
+</android.support.constraint.ConstraintLayout>

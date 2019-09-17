@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:background="#fff">
+
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/staticSpeed"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="Velocidade"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/speedTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="0.0"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/staticSpeed" />
+
+        <TextView
+            android:id="@+id/staticLaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:text="Voltas"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toStartOf="@+id/staticTime"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speedTextView" />
+
+        <TextView
+            android:id="@+id/lapsTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="0"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/staticLaps"
+            app:layout_constraintStart_toStartOf="@+id/staticLaps"
+            app:layout_constraintTop_toBottomOf="@+id/staticLaps" />
+
+        <TextView
+            android:id="@+id/staticTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="60dp"
+            android:text="Tempo de Prova"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/speedTextView" />
+
+        <TextView
+            android:id="@+id/timeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/staticTime"
+            app:layout_constraintStart_toStartOf="@+id/staticTime"
+            app:layout_constraintTop_toBottomOf="@+id/staticTime" />
+
+        <TextView
+            android:id="@+id/staticRegressiveTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tempo Faltando"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@+id/staticLaps"
+            app:layout_constraintHorizontal_bias="0.514"
+            app:layout_constraintStart_toStartOf="@+id/staticLaps"
+            app:layout_constraintTop_toBottomOf="@+id/lapsTextView" />
+
+        <TextView
+            android:id="@+id/regressiveTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/staticRegressiveTime"
+            app:layout_constraintStart_toStartOf="@+id/staticRegressiveTime"
+            app:layout_constraintTop_toBottomOf="@+id/staticRegressiveTime" />
+
+        <TextView
+            android:id="@+id/staticTempoDeVolta"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Tempo de Volta"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="@+id/staticTime"
+            app:layout_constraintHorizontal_bias="0.966"
+            app:layout_constraintStart_toStartOf="@+id/staticTime"
+            app:layout_constraintTop_toBottomOf="@+id/timeTextView" />
+
+        <TextView
+            android:id="@+id/lapTimeTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/staticTempoDeVolta"
+            app:layout_constraintStart_toStartOf="@+id/staticTempoDeVolta"
+            app:layout_constraintTop_toBottomOf="@+id/staticTempoDeVolta" />
+
+        <TextView
+            android:id="@+id/staticPreviousLaps"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="Voltas Anteriores"
+            android:textColor="@android:color/darker_gray"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lapTimeTextView" />
+
+        <TextView
+            android:id="@+id/lapTime1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/lapTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/staticPreviousLaps" />
+
+        <TextView
+            android:id="@+id/lapTime2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime1TextView" />
+
+        <TextView
+            android:id="@+id/lapTime3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime2TextView" />
+
+        <TextView
+            android:id="@+id/lapTime4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime3TextView" />
+
+        <TextView
+            android:id="@+id/lapTime5TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime4TextView" />
+
+        <TextView
+            android:id="@+id/lapTime6TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime5TextView" />
+
+        <TextView
+            android:id="@+id/lapTime7TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime6TextView" />
+
+        <TextView
+            android:id="@+id/lapTime8TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime7TextView" />
+
+        <TextView
+            android:id="@+id/lapTime9TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime8TextView" />
+
+        <TextView
+            android:id="@+id/lapTime10TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime9TextView" />
+
+        <TextView
+            android:id="@+id/lapTime11TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime10TextView" />
+
+        <TextView
+            android:id="@+id/lapTime12TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime11TextView" />
+
+        <TextView
+            android:id="@+id/lapTime13TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime12TextView" />
+
+        <TextView
+            android:id="@+id/lapTime14TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime13TextView" />
+
+        <TextView
+            android:id="@+id/lapTime15TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime14TextView" />
+
+        <TextView
+            android:id="@+id/lapTime16TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime15TextView" />
+
+        <TextView
+            android:id="@+id/lapTime17TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime16TextView" />
+
+        <TextView
+            android:id="@+id/lapTime18TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime17TextView" />
+
+        <TextView
+            android:id="@+id/lapTime19TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime18TextView" />
+
+        <TextView
+            android:id="@+id/lapTime20TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="00:00"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/lapTime1TextView"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/lapTime1TextView"
+            app:layout_constraintTop_toBottomOf="@+id/lapTime19TextView" />
+
+
+        <TextView
+            android:id="@+id/lap1TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="1"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/staticPreviousLaps" />
+
+        <TextView
+            android:id="@+id/lap2TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="2"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap1TextView" />
+
+        <TextView
+            android:id="@+id/lap3TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="3"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap2TextView" />
+
+        <TextView
+            android:id="@+id/lap4TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="4"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap3TextView" />
+
+        <TextView
+            android:id="@+id/lap5TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="5"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap4TextView" />
+
+        <TextView
+            android:id="@+id/lap6TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="6"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap5TextView" />
+
+        <TextView
+            android:id="@+id/lap8TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="8"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap7TextView" />
+
+        <TextView
+            android:id="@+id/lap10TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="10"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap9TextView2" />
+
+        <TextView
+            android:id="@+id/lap9TextView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="9"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap8TextView" />
+
+        <TextView
+            android:id="@+id/lap7TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="7"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap6TextView" />
+
+        <TextView
+            android:id="@+id/lap11TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="11"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap10TextView" />
+        <TextView
+            android:id="@+id/lap12TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="12"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap11TextView" />
+
+        <TextView
+            android:id="@+id/lap13TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="13"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap12TextView" />
+        <TextView
+            android:id="@+id/lap14TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="14"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap13TextView" />
+        <TextView
+            android:id="@+id/lap15TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="15"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap14TextView" />
+        <TextView
+            android:id="@+id/lap16TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="16"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap15TextView" />
+        <TextView
+            android:id="@+id/lap17TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="17"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap16TextView" />
+        <TextView
+            android:id="@+id/lap18TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="18"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap17TextView" />
+        <TextView
+            android:id="@+id/lap19TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="19"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap18TextView" />
+        <TextView
+            android:id="@+id/lap20TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:text="20"
+            android:textColor="@android:color/background_dark"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/regressiveTimeTextView"
+            app:layout_constraintStart_toStartOf="@+id/regressiveTimeTextView"
+            app:layout_constraintTop_toBottomOf="@+id/lap19TextView" />
+
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
